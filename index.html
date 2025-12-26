@@ -201,16 +201,30 @@ footer a:hover {
     <p>Paste a YouTube link and download thumbnails</p>
   </header>
 
-  <div class="input-area">
-    <input id="url" type="text" placeholder="https://www.youtube.com/watch?v=..." />
-    <button class="get-btn" onclick="getThumbnail()">Get Thumbnail</button>
-  </div>
+<div class="input-area">
+  <select id="toolSelect" style="padding:16px;border-radius:14px;border:none;">
+    <option value="thumbnail">Video Thumbnail</option>
+    <option value="channel">Channel Logo</option>
+  </select>
 
-  <div id="result"></div>
+  <input id="url" type="text" placeholder="Paste YouTube video or channel URL" />
+  <button class="get-btn" onclick="handleTool()">Get</button>
+</div>
+
 
 
   <script>
     let currentVideoId = null;
+
+        function handleTool() {
+  const tool = document.getElementById("toolSelect").value;
+  if (tool === "thumbnail") {
+    getThumbnail();
+  } else {
+    getChannelLogo();
+  }
+}
+
 
     function getThumbnail() {
       const url = document.getElementById("url").value.trim();
@@ -222,6 +236,30 @@ footer a:hover {
         result.innerHTML = "<div class='error'>Please enter a valid YouTube URL</div>";
         return;
       }
+          function getChannelLogo() {
+  const url = document.getElementById("url").value.trim();
+  const result = document.getElementById("result");
+  result.innerHTML = "";
+
+  const match = url.match(/(channel\/|@)([^\/\?]+)/);
+  if (!match) {
+    result.innerHTML = "<div class='error'>Please enter a valid YouTube channel URL</div>";
+    return;
+  }
+
+  const channelId = match[2];
+  const imgUrl = `https://yt3.googleusercontent.com/${channelId}=s800-c-k-c0x00ffffff-no-rj`;
+
+  result.innerHTML = `
+    <div class="preview">
+      <img src="${imgUrl}" alt="Channel Logo">
+      <button class="download-btn" onclick="forceDownload('${imgUrl}','channel-logo.jpg')">
+        Download Logo
+      </button>
+    </div>
+  `;
+}
+
 
       currentVideoId = match[2];
 
@@ -311,6 +349,7 @@ footer a:hover {
 </footer>
 </body>
 </html>
+
 
 
 
