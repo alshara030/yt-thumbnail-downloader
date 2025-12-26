@@ -231,11 +231,25 @@ footer a:hover {
       const result = document.getElementById("result");
       result.innerHTML = "";
 
-      const match = url.match(/(v=|\/)([0-9A-Za-z_-]{11})/);
-      if (!match) {
-        result.innerHTML = "<div class='error'>Please enter a valid YouTube URL</div>";
-        return;
-      }
+     let videoId = null;
+
+try {
+  const urlObj = new URL(url);
+
+  if (urlObj.hostname.includes("youtu.be")) {
+    videoId = urlObj.pathname.slice(1);
+  } else {
+    videoId = urlObj.searchParams.get("v");
+  }
+} catch (e) {}
+
+if (!videoId || videoId.length !== 11) {
+  result.innerHTML = "<div class='error'>Please enter a valid YouTube URL</div>";
+  return;
+}
+
+currentVideoId = videoId;
+
           function getChannelLogo() {
   const url = document.getElementById("url").value.trim();
   const result = document.getElementById("result");
@@ -349,6 +363,7 @@ footer a:hover {
 </footer>
 </body>
 </html>
+
 
 
 
