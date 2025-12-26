@@ -1,46 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW4XFSW8HZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KW4XFSW8HZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KW4XFSW8HZ');
+  </script>
 
-  gtag('config', 'G-KW4XFSW8HZ');
-</script>
-
-      <meta name="description" content="Free YouTube Thumbnail Downloader. Download YouTube thumbnails in HD, SD, and custom sizes instantly.">
-<meta name="keywords" content="youtube thumbnail downloader, yt thumbnail download, youtube thumbnail hd">
   <meta charset="UTF-8" />
   <title>YouTube Thumbnail Downloader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free YouTube Thumbnail Downloader. Download thumbnails in HD, SD, and custom sizes instantly.">
+  <meta name="keywords" content="youtube thumbnail downloader, yt thumbnail, youtube thumbnail hd">
 
   <style>
-        nav {
-  margin-top: 20px;
-}
-
-nav a {
-  color: #aaa;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #fff;
-}
-
-   body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #0f0f0f, #000);
-  color: #fff;
-  min-height: 100vh;
-}
-
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #000);
+      color: #fff;
+      min-height: 100vh;
+    }
 
     header {
       padding: 60px 20px 30px;
@@ -56,17 +39,16 @@ nav a:hover {
       color: #aaa;
     }
 
-   .input-area {
-  max-width: 760px;
-  margin: 40px auto;
-  display: flex;
-  gap: 12px;
-  padding: 20px;
-  background: #111;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
-
+    .input-area {
+      max-width: 760px;
+      margin: 40px auto;
+      display: flex;
+      gap: 12px;
+      padding: 20px;
+      background: #111;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
 
     input {
       flex: 1;
@@ -76,42 +58,33 @@ nav a:hover {
       font-size: 16px;
     }
 
-.get-btn {
-  padding: 16px 30px;
-  border-radius: 999px; /* fully rounded */
-  border: none;
-  background: linear-gradient(135deg, #ff0000, #ff6a00);
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.45);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    .get-btn {
+      padding: 16px 30px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #ff0000, #ff6a00);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(255,0,0,0.45);
+    }
 
-.get-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(255, 80, 0, 0.6);
-}
+    .preview {
+      max-width: 860px;
+      margin: 60px auto;
+      padding: 24px;
+      background: #0d0d0d;
+      border-radius: 26px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      text-align: center;
+    }
 
-
-
- .preview {
-  max-width: 860px;
-  margin: 60px auto 0;
-  padding: 24px;
-  background: #0d0d0d;
-  border-radius: 26px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
-  text-align: center;
-}
-
-.preview img {
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 24px;
-}
-
+    .preview img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
 
     .download-wrap {
       position: relative;
@@ -131,14 +104,13 @@ nav a:hover {
 
     .size-panel {
       position: absolute;
-      top: 110%;
+      top: 120%;
       left: 50%;
       transform: translateX(-50%);
       background: #111;
       border-radius: 16px;
       padding: 10px;
       display: none;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
       min-width: 220px;
     }
 
@@ -151,7 +123,6 @@ nav a:hover {
       text-align: left;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 14px;
     }
 
     .size-panel button:hover {
@@ -164,24 +135,23 @@ nav a:hover {
       margin-top: 20px;
     }
 
-   footer {
-  margin-top: 100px;
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 13px;
-  color: #777;
-  border-top: 1px solid #222;
-}
+    footer {
+      margin-top: 100px;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      border-top: 1px solid #222;
+    }
 
-footer a {
-  color: #aaa;
-  text-decoration: none;
-}
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+    }
 
-footer a:hover {
-  color: #fff;
-}
-
+    footer a:hover {
+      color: #fff;
+    }
 
     @media (max-width: 600px) {
       .input-area {
@@ -193,165 +163,17 @@ footer a:hover {
 
 <body>
 
-
-  <header>
- 
-
-    <h1>YouTube Thumbnail Downloader</h1>
-    <p>Paste a YouTube link and download thumbnails</p>
-  </header>
+<header>
+  <h1>YouTube Thumbnail Downloader</h1>
+  <p>Paste a YouTube link and download thumbnails</p>
+</header>
 
 <div class="input-area">
-  <select id="toolSelect" style="padding:16px;border-radius:14px;border:none;">
-    <option value="thumbnail">Video Thumbnail</option>
-    <option value="channel">Channel Logo</option>
-  </select>
-
-  <input id="url" type="text" placeholder="Paste YouTube video or channel URL" />
-  <button class="get-btn" onclick="handleTool()">Get</button>
+  <input id="url" type="text" placeholder="https://www.youtube.com/watch?v=..." />
+  <button class="get-btn" onclick="getThumbnail()">Get Thumbnail</button>
 </div>
 
-
-
-  <script>
-    let currentVideoId = null;
-
-        function handleTool() {
-  const tool = document.getElementById("toolSelect").value;
-  if (tool === "thumbnail") {
-    getThumbnail();
-  } else {
-    getChannelLogo();
-  }
-}
-
-
-    function getThumbnail() {
-      const url = document.getElementById("url").value.trim();
-      const result = document.getElementById("result");
-      result.innerHTML = "";
-
-     let videoId = null;
-
-try {
-  const urlObj = new URL(url);
-
-  if (urlObj.hostname.includes("youtu.be")) {
-    videoId = urlObj.pathname.slice(1);
-  } else {
-    videoId = urlObj.searchParams.get("v");
-  }
-} catch (e) {}
-
-if (!videoId || videoId.length !== 11) {
-  result.innerHTML = "<div class='error'>Please enter a valid YouTube URL</div>";
-  return;
-}
-
-currentVideoId = videoId;
-
-          function getChannelLogo() {
-  const url = document.getElementById("url").value.trim();
-  const result = document.getElementById("result");
-  result.innerHTML = "";
-
-  const match = url.match(/(channel\/|@)([^\/\?]+)/);
-  if (!match) {
-    result.innerHTML = "<div class='error'>Please enter a valid YouTube channel URL</div>";
-    return;
-  }
-
-  const channelId = match[2];
-  const imgUrl = `https://yt3.googleusercontent.com/${channelId}=s800-c-k-c0x00ffffff-no-rj`;
-
-  result.innerHTML = `
-    <div class="preview">
-      <img src="${imgUrl}" alt="Channel Logo">
-      <button class="download-btn" onclick="forceDownload('${imgUrl}','channel-logo.jpg')">
-        Download Logo
-      </button>
-    </div>
-  `;
-}
-
-
-      currentVideoId = match[2];
-
-      const hd = `https://img.youtube.com/vi/${currentVideoId}/maxresdefault.jpg`;
-
-      result.innerHTML = `
-        <div class="preview">
-          <img src="${hd}" alt="Thumbnail">
-
-          <div class="download-wrap">
-            <button class="download-btn" onclick="togglePanel()">Download</button>
-
-            <div class="size-panel" id="sizePanel">
-              <button onclick="downloadSize(120, 90)">120 × 90</button>
-              <button onclick="downloadSize(320, 180)">320 × 180</button>
-              <button onclick="downloadSize(480, 360)">480 × 360</button>
-              <button onclick="downloadSize(640, 480)">SD 640 × 480</button>
-              <button onclick="downloadOriginal()">HD (Original)</button>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    function togglePanel() {
-      const panel = document.getElementById("sizePanel");
-      panel.style.display = panel.style.display === "block" ? "none" : "block";
-    }
-
-    function downloadOriginal() {
-      const url = `https://img.youtube.com/vi/${currentVideoId}/maxresdefault.jpg`;
-      forceDownload(url, "thumbnail-hd.jpg");
-    }
-
-    function downloadSize(width, height) {
-      const url = `https://img.youtube.com/vi/${currentVideoId}/hqdefault.jpg`;
-      fetch(url)
-        .then(res => res.blob())
-        .then(blob => resizeAndDownload(blob, width, height))
-        .catch(() => alert("Download failed"));
-    }
-
-    function resizeAndDownload(blob, width, height) {
-      const img = new Image();
-      img.src = URL.createObjectURL(blob);
-
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
-
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, width, height);
-
-        canvas.toBlob(file => {
-          const a = document.createElement("a");
-          a.href = URL.createObjectURL(file);
-          a.download = `thumbnail-${width}x${height}.jpg`;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        }, "image/jpeg");
-      };
-    }
-
-    function forceDownload(url, filename) {
-      fetch(url)
-        .then(res => res.blob())
-        .then(blob => {
-          const a = document.createElement("a");
-          a.href = URL.createObjectURL(blob);
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        });
-    }
-  </script>
+<div id="result"></div>
 
 <footer>
   <p>This tool is not affiliated with YouTube.</p>
@@ -361,25 +183,88 @@ currentVideoId = videoId;
     <a href="contact.html">Contact</a>
   </p>
 </footer>
+
+<script>
+  let currentVideoId = null;
+
+  function getThumbnail() {
+    const url = document.getElementById("url").value.trim();
+    const result = document.getElementById("result");
+    result.innerHTML = "";
+
+    const match = url.match(/(?:v=|\/)([0-9A-Za-z_-]{11})/);
+    if (!match) {
+      result.innerHTML = "<div class='error'>Please enter a valid YouTube URL</div>";
+      return;
+    }
+
+    currentVideoId = match[1];
+    const imgUrl = `https://img.youtube.com/vi/${currentVideoId}/maxresdefault.jpg`;
+
+    result.innerHTML = `
+      <div class="preview">
+        <img src="${imgUrl}" alt="Thumbnail">
+
+        <div class="download-wrap">
+          <button class="download-btn" onclick="togglePanel()">Download</button>
+          <div class="size-panel" id="sizePanel">
+            <button onclick="downloadSize(120,90)">120 × 90</button>
+            <button onclick="downloadSize(320,180)">320 × 180</button>
+            <button onclick="downloadSize(480,360)">480 × 360</button>
+            <button onclick="downloadSize(640,480)">SD 640 × 480</button>
+            <button onclick="downloadOriginal()">HD Original</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function togglePanel() {
+    const panel = document.getElementById("sizePanel");
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+  }
+
+  function downloadOriginal() {
+    forceDownload(
+      `https://img.youtube.com/vi/${currentVideoId}/maxresdefault.jpg`,
+      "thumbnail-hd.jpg"
+    );
+  }
+
+  function downloadSize(w, h) {
+    fetch(`https://img.youtube.com/vi/${currentVideoId}/hqdefault.jpg`)
+      .then(r => r.blob())
+      .then(b => resizeAndDownload(b, w, h));
+  }
+
+  function resizeAndDownload(blob, w, h) {
+    const img = new Image();
+    img.src = URL.createObjectURL(blob);
+    img.onload = () => {
+      const c = document.createElement("canvas");
+      c.width = w;
+      c.height = h;
+      c.getContext("2d").drawImage(img, 0, 0, w, h);
+      c.toBlob(f => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(f);
+        a.download = `thumbnail-${w}x${h}.jpg`;
+        a.click();
+      });
+    };
+  }
+
+  function forceDownload(url, name) {
+    fetch(url)
+      .then(r => r.blob())
+      .then(b => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(b);
+        a.download = name;
+        a.click();
+      });
+  }
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
