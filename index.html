@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KW4XFSW8HZ"></script>
   <script>
@@ -10,16 +11,67 @@
     gtag('config', 'G-KW4XFSW8HZ');
   </script>
 
-  <!-- AdSense -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1935984181885001"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
   <meta charset="UTF-8">
   <title>YouTube Thumbnail Downloader – Free HD & SD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Free YouTube Thumbnail Downloader. Download YouTube video thumbnails in HD, SD, and custom sizes instantly. No login required.">
-  <meta name="keywords" content="youtube thumbnail downloader, download youtube thumbnail, youtube thumbnail hd, yt thumbnail grabber">
+  <meta name="description" content="Free YouTube Thumbnail Downloader. Download YouTube video thumbnails in HD, SD, and custom sizes instantly. No signup required.">
+  <meta name="keywords" content="youtube thumbnail downloader, download youtube thumbnail, youtube thumbnail hd, youtube thumbnail grabber">
+
+  <!-- Schema: FAQ + HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is a YouTube thumbnail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A YouTube thumbnail is the preview image displayed before a video is played."
+      }
+    },{
+      "@type": "Question",
+      "name": "Can I download YouTube thumbnails for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this tool allows you to download YouTube thumbnails instantly for free."
+      }
+    },{
+      "@type": "Question",
+      "name": "Is this YouTube Thumbnail Downloader safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All processing happens in your browser and no data is stored."
+      }
+    }]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download a YouTube Thumbnail",
+    "step": [{
+      "@type": "HowToStep",
+      "text": "Copy the YouTube video URL."
+    },{
+      "@type": "HowToStep",
+      "text": "Paste the URL into the input box."
+    },{
+      "@type": "HowToStep",
+      "text": "Click the Get Thumbnail button."
+    },{
+      "@type": "HowToStep",
+      "text": "Choose the size and download the thumbnail."
+    }]
+  }
+  </script>
 
   <style>
     body {
@@ -36,17 +88,18 @@
 
     header h1 {
       font-size: 2.4rem;
+      margin-bottom: 10px;
     }
 
     header p {
       color: #aaa;
-      max-width: 800px;
-      margin: 15px auto;
+      max-width: 720px;
+      margin: 10px auto;
     }
 
     .input-area {
       max-width: 760px;
-      margin: 40px auto;
+      margin: 30px auto;
       display: flex;
       gap: 12px;
       padding: 20px;
@@ -68,14 +121,13 @@
       border: none;
       background: linear-gradient(135deg, #ff0000, #ff6a00);
       color: white;
-      font-size: 16px;
-      cursor: pointer;
       font-weight: 600;
+      cursor: pointer;
     }
 
     .preview {
       max-width: 860px;
-      margin: 60px auto;
+      margin: 40px auto;
       padding: 24px;
       background: #0d0d0d;
       border-radius: 26px;
@@ -85,10 +137,10 @@
     .preview img {
       width: 100%;
       border-radius: 20px;
+      margin-bottom: 20px;
     }
 
     .download-btn {
-      margin-top: 20px;
       padding: 14px 28px;
       border-radius: 999px;
       border: none;
@@ -98,30 +150,33 @@
     }
 
     .size-panel {
+      display: none;
       margin-top: 15px;
     }
 
     .size-panel button {
-      margin: 5px;
-      padding: 10px 16px;
+      display: block;
+      width: 100%;
+      margin: 6px 0;
+      padding: 10px;
       border-radius: 10px;
+      background: #222;
+      color: white;
       border: none;
       cursor: pointer;
     }
 
     section {
-      max-width: 900px;
+      max-width: 860px;
       margin: 80px auto;
       color: #aaa;
+      font-size: 15px;
       padding: 0 20px;
     }
 
-    section h2 {
-      color: #fff;
-    }
-
     footer {
-      padding: 40px 20px;
+      margin-top: 100px;
+      padding: 30px;
       text-align: center;
       font-size: 13px;
       color: #777;
@@ -139,108 +194,79 @@
 
 <header>
   <h1>YouTube Thumbnail Downloader</h1>
-  <p>
-    Download any YouTube video thumbnail instantly in HD, SD, or custom sizes.
-    This free tool works directly in your browser with no registration required.
-  </p>
+  <p>Download YouTube thumbnails in HD, SD, and custom sizes instantly.</p>
 </header>
 
 <div class="input-area">
-  <input id="url" type="text" placeholder="https://www.youtube.com/watch?v=..." />
+  <input id="url" type="text" placeholder="Paste YouTube video URL">
   <button class="get-btn" onclick="getThumbnail()">Get Thumbnail</button>
 </div>
 
 <div id="result"></div>
 
 <section>
-  <h2>How to Use This Tool</h2>
+  <h2 style="color:#fff;">How to Use This Tool</h2>
   <ol>
-    <li>Copy the YouTube video link</li>
-    <li>Paste the link into the input box above</li>
-    <li>Click <strong>Get Thumbnail</strong></li>
-    <li>Select your preferred image size</li>
-    <li>The thumbnail downloads instantly</li>
+    <li>Copy the YouTube video link.</li>
+    <li>Paste it into the input box.</li>
+    <li>Click <strong>Get Thumbnail</strong>.</li>
+    <li>Select the size and download.</li>
   </ol>
 </section>
 
 <section>
-  <h2>Why Use This YouTube Thumbnail Downloader?</h2>
-  <p>
-    This tool helps creators, designers, and marketers quickly download
-    YouTube thumbnails for previews, analysis, or educational use.
-    No data is stored and everything runs securely in your browser.
-  </p>
-</section>
-
-<!-- Ad AFTER CONTENT (important for AdSense approval) -->
-<div style="max-width:760px;margin:40px auto;text-align:center;">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-1935984181885001"
-       data-ad-slot="1111111111"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
-<section>
-  <h2>Frequently Asked Questions</h2>
-
-  <h3>Is this tool free?</h3>
-  <p>Yes, the YouTube Thumbnail Downloader is completely free.</p>
-
-  <h3>Is it safe?</h3>
-  <p>Yes. All processing happens in your browser. No data is stored.</p>
-
-  <h3>Does this tool belong to YouTube?</h3>
-  <p>No. This website is not affiliated with YouTube.</p>
+  <h2 style="color:#fff;">Frequently Asked Questions</h2>
+  <p><strong>What is a YouTube thumbnail?</strong><br>A preview image for YouTube videos.</p>
+  <p><strong>Is this tool free?</strong><br>Yes, completely free.</p>
+  <p><strong>Is it safe?</strong><br>Yes, no data is stored.</p>
 </section>
 
 <footer>
   <p>This tool is not affiliated with YouTube.</p>
   <p>
     <a href="privacy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms of Service</a> |
+    <a href="terms.html">Terms</a> |
     <a href="contact.html">Contact</a>
   </p>
 </footer>
 
 <script>
-  function getThumbnail() {
-    const url = document.getElementById("url").value.trim();
-    const result = document.getElementById("result");
+function getThumbnail() {
+  const url = document.getElementById("url").value.trim();
+  const result = document.getElementById("result");
+  const match = url.match(/(?:v=|\/)([0-9A-Za-z_-]{11})/);
 
-    const match = url.match(/(?:v=|\/)([0-9A-Za-z_-]{11})/);
-    if (!match) {
-      result.innerHTML = "<p style='color:red;text-align:center;'>Invalid YouTube URL</p>";
-      return;
-    }
-
-    const id = match[1];
-    const img = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-
-    result.innerHTML = `
-      <div class="preview">
-        <img src="${img}">
-        <div class="size-panel">
-          <button onclick="download('${img}','hd.jpg')">HD</button>
-          <button onclick="download('https://img.youtube.com/vi/${id}/hqdefault.jpg','sd.jpg')">SD</button>
-        </div>
-      </div>`;
+  if (!match) {
+    result.innerHTML = "<p style='color:#ff6b6b;text-align:center;'>Invalid YouTube URL</p>";
+    return;
   }
 
-  function download(url, name) {
-    fetch(url)
-      .then(r => r.blob())
-      .then(b => {
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(b);
-        a.download = name;
-        a.click();
-      });
-  }
+  const id = match[1];
+  const img = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+
+  result.innerHTML = `
+    <div class="preview">
+      <img src="${img}">
+      <button class="download-btn" onclick="toggle()">Download</button>
+      <div class="size-panel" id="sizes">
+        <button onclick="dl('${img}','hd.jpg')">HD Original</button>
+        <button onclick="dl('https://img.youtube.com/vi/${id}/hqdefault.jpg','sd.jpg')">SD</button>
+      </div>
+    </div>`;
+}
+
+function toggle() {
+  document.getElementById("sizes").style.display = "block";
+}
+
+function dl(url, name) {
+  fetch(url).then(r=>r.blob()).then(b=>{
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(b);
+    a.download=name;
+    a.click();
+  });
+}
 </script>
 
 </body>
