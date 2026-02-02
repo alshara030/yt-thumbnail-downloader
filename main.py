@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 
 # --- CONFIGURATION (Change this to your actual ID later) ---
-# Your Publisher ID looks like: pub-1234567890123456
+# Your Publisher ID looks like: pub-1935984181885001"
 ADSENSE_ID = "pub-0000000000000000" 
 
 # --- STYLES ---
@@ -146,3 +146,4 @@ def download_file(vid):
 
 if __name__ == '__main__':
     app.run()
+
