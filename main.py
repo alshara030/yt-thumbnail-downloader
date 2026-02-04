@@ -1,12 +1,13 @@
-from flask import Flask, render_template_string, request, redirect, url_for, Response
-import re
-import requests
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# --- CONFIGURATION (Change this to your actual ID later) ---
-# Your Publisher ID looks like: pub-1935984181885001"
+@app.route('/')
+def home():
+    return render_template('index.html')
 
+if __name__ == "__main__":
+    app.run()
 
 
 # --- STYLES ---
@@ -147,6 +148,7 @@ def download_file(vid):
 
 if __name__ == '__main__':
     app.run()
+
 
 
 
