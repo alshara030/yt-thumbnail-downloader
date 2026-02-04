@@ -7,12 +7,6 @@ def home():
     # This renders your index.html from the templates folder
     return render_template('index.html')
 
-# If you have download logic, give it a different name like 'download_video'
-@app.route('/download', methods=['POST'])
-def download_video():
-    video_url = request.form.get('video_url')
-    return f"Processing: {video_url}"
-
 if __name__ == "__main__":
     app.run()
 
@@ -154,6 +148,7 @@ def download_file(vid):
 
 if __name__ == '__main__':
     app.run()
+
 
 
 
