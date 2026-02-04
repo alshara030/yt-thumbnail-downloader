@@ -4,9 +4,8 @@ import requests
 
 app = Flask(__name__)
 
-# --- CONFIGURATION (Change this to your actual ID later) ---
-# Your Publisher ID looks like: pub-1935984181885001"
-ADSENSE_ID = "pub-0000000000000000" 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1935984181885001"
+     crossorigin="anonymous"></script> 
 
 # --- STYLES ---
 CSS = """
@@ -146,4 +145,5 @@ def download_file(vid):
 
 if __name__ == '__main__':
     app.run()
+
 
